@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEST OF THE YEAR</title>
+</head>
+
+<body>
+    <header>
+        <h1>Dettaglio</h1>
+    </header>
+
+    <body>
+        <div class="container">
+            <p th:if="${SelectedObj != null}" th:text="|Detttagli : ${SelectedObj}|"></p>
+            <p th:if="${SelectedObj == null}">Nessun elemento selezionato</p>
+        </div>
+    </body>
+</body>
+
+</html>

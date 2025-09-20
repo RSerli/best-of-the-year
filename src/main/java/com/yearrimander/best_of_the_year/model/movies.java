@@ -60,4 +60,16 @@ public class movies {
         this.valutazione = valutazione;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Id=").append(id);
+        sb.append(" Titolo:").append(nome);
+        sb.append(", genere:").append(genere);
+        sb.append(", anno:").append(anno);
+        sb.append(", valutazione:").append(valutazione);
+        return sb.toString();
+    }
+
+    
 }

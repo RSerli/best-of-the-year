@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -25,6 +26,7 @@ public class BestOfTheYearController {
         return "BestOfTheYear";
     }
 
+    // Lista canzoni e film
     @GetMapping("/movies")
     public String ViewMovies (Model model){
         model.addAttribute("film", creaListaFilm ());
@@ -35,6 +37,39 @@ public class BestOfTheYearController {
     public String ViewSongs (Model model){
         model.addAttribute("canzoni", creaListaCanzoni ());
         return "songs";
+    }
+
+    // visualizzazione specifica canzone\film a seconda dell'id passato
+    @GetMapping("/movies/{id}")
+    public String ViewSelectedMovie (@PathVariable(name="id", required=false) Integer param, Model model){
+        List<movies> listaFilm = creaListaFilm ();
+        movies FilmSelezionato = null;
+        for (movies u : listaFilm){
+            if(u.getId() == param){
+                FilmSelezionato = u;
+                break;
+            }
+        }
+        if (FilmSelezionato != null){
+            model.addAttribute("SelectedObj", FilmSelezionato);
+        }
+        return "detail";
+    }
+
+     @GetMapping("/songs/{id}")
+    public String ViewSelectedSong (@PathVariable(name="id", required=false) Integer param, Model model){
+        List<songs> listaCanzoni = creaListaCanzoni ();
+        songs CanzoneSelezionata = null;
+        for (songs u : listaCanzoni){
+            if(u.getId() == param){
+                CanzoneSelezionata = u;
+                break;
+            }
+        }
+        if (CanzoneSelezionata != null){
+            model.addAttribute("SelectedObj", CanzoneSelezionata);
+        }
+        return "detail";
     }
 
     private List<movies> creaListaFilm (){
