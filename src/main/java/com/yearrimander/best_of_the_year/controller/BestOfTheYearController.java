@@ -22,7 +22,7 @@ public class BestOfTheYearController {
     @GetMapping("/BestOfTheYear")
     public String BestOfTheYear( @RequestParam(required=false) String userFirstName,
                                 Model model) {
-        model.addAttribute("userFirstName", userFirstName);
+        // model.addAttribute("userFirstName", userFirstName);
         return "BestOfTheYear";
     }
 

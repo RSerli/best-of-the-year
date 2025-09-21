@@ -2,22 +2,32 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}" />
     <title>BEST OF THE YEAR</title>
 </head>
 
 <body>
     <header>
-        <h1>Dettaglio</h1>
+        <div class="container">
+            <nav th:replace="navbar :: navbar('Home')"></nav>
+        </div>
     </header>
 
-    <body>
+    <main>
         <div class="container">
-            <p th:if="${SelectedObj != null}" th:text="|Detttagli : ${SelectedObj}|"></p>
-            <p th:if="${SelectedObj == null}">Nessun elemento selezionato</p>
+            <div class="container">
+                <p th:if="${SelectedObj != null}" th:text="|Detttagli : ${SelectedObj}|"></p>
+                <p th:if="${SelectedObj == null}">Nessun elemento selezionato</p>
+            </div>
         </div>
-    </body>
+    </main>
+    <!-- Bootstrap Bundle with Popper -->
+    <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
 </body>
 
 </html>
