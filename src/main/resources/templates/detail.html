@@ -19,11 +19,33 @@
     </header>
 
     <main>
-        <div class="container">
-            <div class="container">
-                <p th:if="${SelectedObj != null}" th:text="|Detttagli : ${SelectedObj}|"></p>
-                <p th:if="${SelectedObj == null}">Nessun elemento selezionato</p>
+        <div class="container py-3">
+            <!-- <p th:if="${selectedObj != null}" th:text="|Detttagli : ${selectedObj}|"> -->
+            <div class="row justify-content-left">
+                <h2 class="text-center">Dettagli:</h2>
+                <!-- card dettaglio film -->
+                <div th:if="${selectedObj.key == 0}" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${selectedObj.nome}"></h5>
+                        <h6 class="card-subtitle mb-3 text-muted" th:text="|Genere: ${selectedObj.genere}|"></h6>
+                        <h6 class="card-subtitle mb-3 text-muted" th:text="|Anno: ${selectedObj.anno}|"></h6>
+                        <h6 class="card-subtitle mb-3 text-muted"
+                            th:text="|Valutazione: ${selectedObj.valutazione}/10|"></h6>
+                    </div>
+                </div>
+                <!-- card dettaglio canzone -->
+                <div th:if="${selectedObj.key == 1}" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${selectedObj.titolo}"></h5>
+                        <h6 class="card-subtitle mb-3 text-muted" th:text="|Genere: ${selectedObj.genere}|"></h6>
+                        <h6 class="card-subtitle mb-3 text-muted" th:text="|Anno: ${selectedObj.anno}|"></h6>
+                        <h6 class="card-subtitle mb-3 text-muted"
+                            th:text="|Valutazione: ${selectedObj.valutazione}/10|"></h6>
+                    </div>
+                </div>
             </div>
+            </p>
+            <p th:if="${selectedObj == null}">Nessun elemento selezionato</p>
         </div>
     </main>
     <!-- Bootstrap Bundle with Popper -->

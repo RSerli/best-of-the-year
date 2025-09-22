@@ -51,7 +51,7 @@ public class BestOfTheYearController {
             }
         }
         if (FilmSelezionato != null){
-            model.addAttribute("SelectedObj", FilmSelezionato);
+            model.addAttribute("selectedObj", FilmSelezionato);
         }
         return "detail";
     }
@@ -67,7 +67,7 @@ public class BestOfTheYearController {
             }
         }
         if (CanzoneSelezionata != null){
-            model.addAttribute("SelectedObj", CanzoneSelezionata);
+            model.addAttribute("selectedObj", CanzoneSelezionata);
         }
         return "detail";
     }

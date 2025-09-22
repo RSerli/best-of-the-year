@@ -12,6 +12,7 @@ public class songs {
 
     private double valutazione;
 
+    private int key = 1;
     
 
     public songs(String titolo, int id, String genere, int anno, double valutazione) {
@@ -60,6 +61,10 @@ public class songs {
 
     public void setValutazione(double valutazione) {
         this.valutazione = valutazione;
+    }
+
+    public int getKey() {
+        return key;
     }
 
      @Override

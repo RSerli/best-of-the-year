@@ -12,6 +12,8 @@ public class movies {
 
     private double valutazione;
 
+    private int key = 0;
+
     public movies(String nome, int id, String genere, int anno, double valutazione) {
         this.nome = nome;
         this.id = id;
@@ -58,6 +60,10 @@ public class movies {
 
     public void setValutazione(double valutazione) {
         this.valutazione = valutazione;
+    }
+
+    public int getKey() {
+        return key;
     }
 
     @Override
