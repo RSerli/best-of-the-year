@@ -20,13 +20,21 @@
 
     <main>
         <div class="container">
-            <div th:unlss="${film.size() == 0}">
-                <ul>
-                    <li th:each="u : ${film}" th:text="|${u.id} ${u.nome}|">
-                </ul>
+            <div class="row py-3 justify-content-center">
+                <h2 class="text-center">
+                    Lista film
+                </h2>
+                <div class="col-4">
+                    <div class="card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" th:each="u : ${film}">
+                                <a th:text="|${u.id} ${u.nome}|" th:href="@{/movies/{id}(id=${u.id})}"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-
     </main>
 
     <!-- Bootstrap Bundle with Popper -->

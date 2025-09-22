@@ -24,8 +24,8 @@
             <img id="img_Bestyear" alt="logo" th:src="@{img/logo.png}" />
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-            <a th:replace="fragments :: button('@{/movies}', 'Film')"></a>
-            <a th:replace="fragments :: button('@{/songs}', 'Canzoni')"></a>
+            <a th:replace="fragments :: button('/movies', 'Film')"></a>
+            <a th:replace="fragments :: button('/songs', 'Canzoni')"></a>
         </div>
     </main>
     <!-- Bootstrap Bundle with Popper -->
